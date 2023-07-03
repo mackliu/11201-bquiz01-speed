@@ -19,5 +19,24 @@ class Image extends DB{
         'updateBtn'=>"更換圖片"
         ];
      return $this->view('./view/backend/image.php',$view);
-    }    
+    }
+
+    function num(){
+        return $this->count(['sh'=>1]);
+    }
+
+    
+    function show(){
+        $rows=$this->all(['sh'=>1]);
+        foreach($rows as $idx => $row){
+        ?>
+        <div class="im" id="ssaa<?=$idx;?>">
+            <img src="./uplod/<?=$row['img'];?>" style="width:150px;height:103px">
+        </div>
+
+        <?php
+        }
+    }
+
+
 }

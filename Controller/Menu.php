@@ -26,4 +26,14 @@ class Menu extends DB{
         ];
      return $this->view('./view/backend/menu.php',$view);
     }
+
+    function show(){
+        $rows=$this->all(['main_id'=>0]);
+        foreach($rows as $idx =>$row){
+            $row['subs']=$this->all(['main_id'=>$row['id']]);
+            $rows[$idx]=$row;
+
+        }
+        return $rows;
+    }
 }
