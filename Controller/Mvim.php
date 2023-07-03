@@ -7,4 +7,16 @@ class Mvim extends DB{
     {
         parent::__construct('mvim');
     }
+    
+    function backend(){
+        $view=['header'=>'動畫圖片管理',
+        'table'=>$this->table,
+        'rows'=>$this->all(),
+        'addbtn'=>'新增動畫圖片',
+        'modal'=>"./view/modal/mvim.php",
+        'updateModal'=>"./view/modal/updateMvim.php",
+        'updateBtn'=>"更換動畫"
+        ];
+     return $this->view('./view/backend/mvim.php',$view);
+    }
 }

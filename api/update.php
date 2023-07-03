@@ -12,6 +12,7 @@ switch($table){
     case "image":
     case "mvim":
         $rows=$_POST['id'];
+    break;
     default:
         $rows=$_POST['text'];
 }
@@ -42,7 +43,7 @@ foreach($rows as $id => $row){
                 }
                 $data['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;                
         }
-        
+
         $$db->save($data);
     }
 
