@@ -45,7 +45,7 @@
                 <tr>
                     <td width="200px">
                         <input type="button"
-                            onclick="op('#cover','#cvr','<?=$modal;?>')" value="<?=$addbtn;?>">
+                            onclick="op('#cover','#cvr','<?=$modal;?>?id=<?=$row['id'];?>')" value="<?=$addbtn;?>">
                     </td>
                     <td class="cent">
                         <input type="hidden" name='table' value='<?=$table;?>'>
