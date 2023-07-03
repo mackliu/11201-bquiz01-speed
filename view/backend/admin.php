@@ -4,31 +4,22 @@
         <table width="100%">
             <tbody>
                 <tr class="yel">
-                    <td width="45%">網站標題</td>
-                    <td width="23%">替代文字</td>
-                    <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
-                    <td></td>
+                    <td width="45%">帳號</td>
+                    <td width="45%">密碼</td>
+                    <td width="10%">刪除</td>
                 </tr>
             <?php
                 foreach($rows as $row){
             ?>
                 <tr>
                     <td width="45%">
-                        <img src="./upload/<?=$row['img'];?>" style="width:300px;height:30px">
+                    <input type="text" name="acc[<?=$row['id'];?>]" value="<?=$row['acc'];?>">
                     </td>
-                    <td width="23%">
-                        <input type="text" name="text[<?=$row['id'];?>]" value="<?=$row['text'];?>">
-                    </td>
-                    <td width="7%">
-                        <input type="radio" name="sh" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
+                    <td width="45%">
+                        <input type="password" name="pw[<?=$row['id'];?>]" value="<?=$row['pw'];?>">
                     </td>
                     <td width="7%">
                          <input type="checkbox" name="del[<?=$row['id'];?>]" value="<?=$row['id'];?>">
-                    </td>
-                    <td>
-                    <input type="button"
-                            onclick="op('#cover','#cvr','<?=$updateModal;?>?id=<?=$row['id'];?>')" value="<?=$updateBtn;?>">
                     </td>
                 </tr>
             <?php

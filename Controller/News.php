@@ -9,14 +9,12 @@ class News extends DB{
     }
     
     function backend(){
-        $view=['header'=>'網站標題管理',
+        $view=['header'=>'最新消息資料管理',
         'table'=>$this->table,
         'rows'=>$this->all(),
-        'addbtn'=>'新增網站標題圖片',
-        'modal'=>"./view/modal/title.php",
-        'updateModal'=>"./view/modal/updateTitle.php",
-        'updateBtn'=>"更新圖片"
+        'addbtn'=>'新增最新消息資料',
+        'modal'=>"./view/modal/news.php",
         ];
-     return $this->view('./view/backend/ad.php',$view);
+     return $this->view('./view/backend/news.php',$view);
     }
 }

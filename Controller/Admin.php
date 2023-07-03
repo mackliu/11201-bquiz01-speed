@@ -8,14 +8,12 @@ class Admin extends DB{
     }
 
     function backend(){
-        $view=['header'=>'網站標題管理',
+        $view=['header'=>'管理者帳號管理',
         'table'=>$this->table,
         'rows'=>$this->all(),
-        'addbtn'=>'新增網站標題圖片',
-        'modal'=>"./view/modal/title.php",
-        'updateModal'=>"./view/modal/updateTitle.php",
-        'updateBtn'=>"更新圖片"
+        'addbtn'=>'新增管理者帳號',
+        'modal'=>"./view/modal/admin.php",
         ];
-     return $this->view('./view/backend/ad.php',$view);
+     return $this->view('./view/backend/admin.php',$view);
     }
 }
