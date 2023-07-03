@@ -18,4 +18,10 @@ class Ad extends DB{
      return $this->view('./view/backend/ad.php',$view);
     }
 
+   function show(){
+        $rows=$this->all(['sh'=>1]);
+        return join("&nbsp;&nbsp;",array_column($rows,'text'));
+
+   }
+
 }

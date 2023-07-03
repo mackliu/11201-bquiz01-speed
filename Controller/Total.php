@@ -15,4 +15,8 @@ class Total extends DB{
         ];
         return $this->view('./view/backend/total.php',$view);
     }
+
+    function show(){
+        return $this->find(1)['total'];
+    }
 }

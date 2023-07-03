@@ -20,4 +20,8 @@ class Title extends DB{
         ];
         return $this->view('./view/backend/title.php',$view);
     }
+
+    function show(){
+        return $this->find(['sh'=>1]);
+    }
 }
