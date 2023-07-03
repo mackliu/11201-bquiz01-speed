@@ -11,7 +11,8 @@ class Image extends DB{
     function backend(){
         $view=['header'=>'校園映像資料管理',
         'table'=>$this->table,
-        'rows'=>$this->all(),
+        'rows'=>$this->paginate(3),
+        'links'=>$this->links(),
         'addbtn'=>'新增校園映像圖片',
         'modal'=>"./view/modal/image.php",
         'updateModal'=>"./view/modal/updateImage.php",

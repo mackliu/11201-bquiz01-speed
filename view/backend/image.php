@@ -33,6 +33,7 @@
             ?>                
             </tbody>
         </table>
+        <div class="cent"><?=$links;?></div>
         <table style="margin-top:40px; width:70%;">
             <tbody>
                 <tr>

@@ -87,7 +87,7 @@ class DB{
         include($path);
     }
 
-    function paginate($num,$arg=[]){
+    function paginate($num,$arg=null){
         $total=$this->count($arg);
         $pages=ceil($total/$num);
         $now=$_GET['p']??1;
@@ -106,18 +106,20 @@ class DB{
     }
 
     function links(){
+        $html='';
         if($this->links['now']-1>=1){
             $prev=$this->links['now']-1;
-            echo "<a href='?do=$this->table&p=$prev'> &lt; </a>";
+            $html.="<a href='?do=$this->table&p=$prev'> &lt; </a>";
         }
         for($i=1;$i<=$this->links['pages'];$i++){
             $size=($this->links['now']==$i)?'24px':'18px';
-            echo "<a href='?do=$this->table&p=$i' style='font-size:$size'> $i </a>";
+            $html.="<a href='?do=$this->table&p=$i' style='font-size:$size'> $i </a>";
         }
         if($this->links['now']+1<=$this->links['pages']){
             $next=$this->links['now']+1;
-            echo "<a href='?do=$this->table&p=$next'> &gt; </a>";
+            $html.="<a href='?do=$this->table&p=$next'> &gt; </a>";
         }
+        return $html;
     }
     /** 工具型方法 */
 
