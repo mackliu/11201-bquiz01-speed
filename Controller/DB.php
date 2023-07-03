@@ -82,7 +82,7 @@ class DB{
 
     /** 畫面資料方法 */
 
-    function view($path,$arg){
+    function view($path,$arg=[]){
         extract($arg);
         include($path);
     }
